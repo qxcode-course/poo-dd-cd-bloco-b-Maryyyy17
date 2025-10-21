@@ -62,8 +62,48 @@
         },
         {
             "label": "2025-10-21_15-55-29",
-            "content": "class Camisa :\n    def __init__ (self) :\n        self.__tamanho : str = \"()\"\n\n\n    def __str__(self) -> str :\n        return f\"size: {self.__tamanho}\"\n\n    def set_Camisa(self, tam: str) -> None :\n        if tam != \"P\" and tam != \"M\" and tam !=\"G\" and tam != \"PP\" and tam != \"GG\" and tam != \"XG\" :\n            print (\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n            return\n        self.__tamanho = tam\n\n    def get_Camisa(self) :\n        return self.__tamanho\n    \ndef main () :\n        Blouse = Camisa()\n        while Blouse.get_Camisa() :\n            line = input()\n            print(\"$\" + line)\n            args = line.split(\" \")\n            if args[0] == \"end\" :\n                break\n            elif args[0] == \"show\" :\n                print(Blouse)\n            elif args[0] == \"size\" :\n                tam = str(args[1])\n                Blouse.set_Camisa(tam)\n\nmain()",
+            "content": "@@ -126,17 +126,16 @@\n f%22size: \n-(\n %7Bself.__\n@@ -142,17 +142,16 @@\n tamanho%7D\n-)\n %22%0A%0A    d\n",
             "lines": "32"
+        },
+        {
+            "label": "2025-10-21_18-12-22",
+            "content": "@@ -66,17 +66,18 @@\n  str = %22\n- \n+()\n %22%0A%0A%0A    \n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-10-21_18-12-37",
+            "content": "@@ -66,16 +66,17 @@\n  str = %22\n+ \n %22%0A%0A%0A    \n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-10-21_18-12-43",
+            "content": "@@ -66,17 +66,16 @@\n  str = %22\n- \n %22%0A%0A%0A    \n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-10-21_18-12-51",
+            "content": "@@ -125,16 +125,17 @@\n f%22size: \n+(\n %7Bself.__\n@@ -142,16 +142,17 @@\n tamanho%7D\n+)\n %22%0A%0A    d\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-10-21_18-12-59",
+            "content": "@@ -70,11 +70,11 @@\n  = %22\n-()%22\n+ %22%0A\n %0A%0A  \n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-10-21_18-13-41",
+            "content": "@@ -256,12 +256,10 @@\n != %22\n-(\n PP\n-)\n %22 an\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-21_18-15-49",
+            "content": "@@ -252,18 +252,20 @@\n tam != %22\n+(\n PP\n+)\n %22 and ta\n@@ -412,18 +412,11 @@\n o = \n-f%22(%7Btam%7D)%22\n+tam\n %0A%0A  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-21_18-18-39",
+            "content": "class Camisa :\n    def __init__ (self) :\n        self.__tamanho : str = \"()\"\n\n    def __str__(self) -> str :\n        return f\"size: {self.__tamanho}\"\n\n    def set_Camisa(self, tam: str) -> None :\n        if tam != \"P\" and tam != \"M\" and tam !=\"G\" and tam != \"PP\" and tam != \"GG\" and tam != \"XG\" :\n            print (\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n            return\n        self.__tamanho = f\"({tam})\"\n\n    def get_Camisa(self) :\n        return self.__tamanho\n    \ndef main () :\n        Blouse = Camisa()\n        while Blouse.get_Camisa() :\n            line = input()\n            print(\"$\" + line)\n            args = line.split(\" \")\n            if args[0] == \"end\" :\n                break\n            elif args[0] == \"show\" :\n                print(Blouse)\n            elif args[0] == \"size\" :\n                tam = str(args[1])\n                Blouse.set_Camisa(tam)\n\nmain()",
+            "lines": "31"
         }
     ]
 }

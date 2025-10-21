@@ -2,7 +2,6 @@ class Camisa :
     def __init__ (self) :
         self.__tamanho : str = "()"
 
-
     def __str__(self) -> str :
         return f"size: {self.__tamanho}"
 
@@ -10,7 +9,7 @@ class Camisa :
         if tam != "P" and tam != "M" and tam !="G" and tam != "PP" and tam != "GG" and tam != "XG" :
             print ("fail: Valor inválido, tente PP, P, M, G, GG ou XG")
             return
-        self.__tamanho = tam
+        self.__tamanho = f"({tam})"
 
     def get_Camisa(self) :
         return self.__tamanho
