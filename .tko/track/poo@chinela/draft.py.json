@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-20_23-09-39",
+            "content": "class Chinela :\n    def __init__(self) :\n        self.__tamanho = 0\n\n    def __str__(self) -> str :\n        return f\"{self.__tamanho}\"\n    \n    def set_chinela(self, valor) :\n        if valor < 20 or valor > 50 or valor % 2 == 1 :\n            print(\"numera\u00e7ao invalida\")\n            return False\n        self.__tamanho = valor\n        return True\n        \n    def get_chinela(self) :\n        return self.__tamanho\n    \ndef main() :\n    slipper = Chinela()\n    while slipper.get_chinela()==0:\n        line = input()\n        print (\"$\" + line)\n        args = line.split(\" \")\n        if args[0] == \"end\" :\n            break\n        elif args[0] == \"init\" :\n            slipper = Chinela()\n            print(\"Qual o tamanho da sua chinela?\")\n            slipper.__init__()\n        elif args[0] == \"show\" :\n            print(slipper)\n        else :\n            print(\"input inv\u00e1lido\")\n\nmain()\n\n        \n\n        \n        \n\n\n",
+            "lines": "42"
+        }
+    ]
+}

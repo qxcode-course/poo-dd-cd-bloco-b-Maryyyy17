@@ -87,8 +87,88 @@
         },
         {
             "label": "2025-10-07_13-39-56",
-            "content": "class Relogio :\n    def __init__(self,hora : int, min: int, seg: int) :\n        self.__hora = hora\n        self.__min = min\n        self.__seg = seg\n\n    def __str__(self) -> str :\n        return f\"{self.__hora:02}:{self.__min:02}:{self.__seg:02}\"\n\n    def set_hora(self, valor : int) -> None :\n        \n        if valor > 23 or valor < 0 :\n            print(\"fail: hora invalida\")\n            return self.__hora == valor\n\n    def set_min(self,valor : int) -> None :\n        \n        if valor > 59 or valor < 0 :\n            print(\"minuto inv\u00e1lido\")\n            return self.__min == valor\n        \n    def set_seg(self, valor : int) -> None :\n        \n        if valor > 59 or valor < 0 :\n            print(\"segundo inv\u00e1lido\")\n            return self.__seg == valor\n         \n    def get_hour(self) -> int:\n        return self.__hora\n\n    def get_min(self) -> int :\n        return self.__min\n\n    def get_seg(self) -> int :\n        return self.__seg\n    \n    def next_second(self):\n        if self.__seg > 59:\n            self.__seg = 0\n        else :\n            self.__seg += 1\n        if self.__min > 59:\n            self.__min = 0\n        else : \n            self.__min += 1\n        if self.__hora > 23:\n            self.__hora = 0\n        else :\n            self.__hora += 1\n\ndef main() :\n    clock = Relogio(00,00,00)\n    while True :\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        if args[0] == \"end\" :\n            break\n        elif args[0] == \"set\" :\n            hora :int =(args[1])\n            min : int = (args[2])\n            seg : int = (args[3])\n            clock = Relogio(hora, min, seg)\n        elif args[0] == \"show\" :\n            print(clock)\n        elif args[0] == \"next\" :\n            clock.next_second()\n        else :\n            print(\"input inv\u00e1lido\")\nmain()\n            \n\n\n            \n\n    \n\n        \n",
+            "content": "@@ -979,32 +979,8 @@\n f):%0A\n-        self.__seg += 1%0A\n     \n@@ -1026,24 +1026,39 @@\n f.__seg = 0%0A\n+        else :%0A\n             \n@@ -1064,19 +1064,19 @@\n  self.__\n-min\n+seg\n  += 1%0A  \n@@ -1073,36 +1073,32 @@\n eg += 1%0A        \n- \n-   \n if self.__min %3E \n@@ -1097,28 +1097,24 @@\n __min %3E 59:%0A\n-    \n             \n@@ -1128,24 +1128,36 @@\n min = 0%0A    \n+    else : %0A\n             \n@@ -1163,20 +1163,19 @@\n  self.__\n-hora\n+min\n  += 1%0A  \n@@ -1180,26 +1180,48 @@\n         \n- \n+if self.__hora %3E 23:%0A\n        \n-if\n+    \n  self.__\n@@ -1217,37 +1217,35 @@\n     self.__hora \n-%3E 23:\n+= 0\n %0A               \n@@ -1229,32 +1229,39 @@\n ora = 0%0A        \n+else :%0A\n             self\n@@ -1268,19 +1268,20 @@\n .__hora \n++\n = \n-0\n+1\n %0A%0Adef ma\n@@ -1511,21 +1511,22 @@\n    hora \n-= \n+:\n int\n+ =\n (args%5B1%5D\n@@ -1543,21 +1543,24 @@\n     min \n-=\n+:\n  int\n+ = \n (args%5B2%5D\n@@ -1581,13 +1581,16 @@\n seg \n-=\n+:\n  int\n+ = \n (arg\n",
             "lines": "78"
+        },
+        {
+            "label": "2025-10-20_18-54-25",
+            "content": "@@ -1666,28 +1666,16 @@\n nt(clock\n-.next_second\n )%0A      \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-10-20_18-55-55",
+            "content": "@@ -1666,16 +1666,28 @@\n nt(clock\n+.next_second\n )%0A      \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-10-20_18-56-15",
+            "content": "@@ -1666,30 +1666,16 @@\n nt(clock\n-.next_second()\n )%0A      \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-10-20_18-57-02",
+            "content": "@@ -1666,16 +1666,30 @@\n nt(clock\n+.next_second()\n )%0A      \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-10-20_18-57-18",
+            "content": "@@ -394,25 +394,16 @@\n  return \n-%0A        \n self.__h\n@@ -407,16 +407,17 @@\n __hora =\n+=\n  valor%0A%0A\n@@ -557,32 +557,24 @@\n       return\n-%0A       \n  self.__min \n@@ -574,16 +574,17 @@\n .__min =\n+=\n  valor%0A \n@@ -628,32 +628,41 @@\n  int) -%3E None :%0A\n+        %0A\n         if valor\n@@ -738,24 +738,16 @@\n   return\n-%0A       \n  self.__\n@@ -751,16 +751,17 @@\n .__seg =\n+=\n  valor%0A \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-10-20_19-01-58",
+            "content": "@@ -87,17 +87,20 @@\n _hora = \n-0\n+hora\n %0A       \n@@ -105,33 +105,35 @@\n    self.__min = \n-0\n+min\n %0A        self.__\n@@ -142,90 +142,11 @@\n g = \n-0%0A        self.set_hora(hora)%0A        self.set_min(min)%0A        self.set_seg(seg)%0A\n+seg\n %0A%0A  \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-20_19-05-49",
+            "content": "@@ -1674,81 +1674,30 @@\n lock\n-.set_hora(hora)%0A            clock.set_min(min)%0A            clock.set_seg(\n+ = Relogio(hora, min, \n seg)\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-10-20_19-07-35",
+            "content": "@@ -607,22 +607,16 @@\n  print(%22\n-fail: \n minuto i\n@@ -613,25 +613,25 @@\n (%22minuto inv\n-a\n+%C3%A1\n lido%22)%0A     \n@@ -781,22 +781,16 @@\n  print(%22\n-fail: \n segundo \n@@ -792,17 +792,17 @@\n undo inv\n-a\n+%C3%A1\n lido%22)%0A \n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-10-20_19-08-23",
+            "content": "@@ -1887,68 +1887,8 @@\n d()%0A\n-%0A        elif args%5B0%5D == %22init%22 :%0A            print(clock)%0A%0A\n     \n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-10-20_19-10-25",
+            "content": "@@ -1933,89 +1933,19 @@\n     \n-clock.set_hora(hora)%0A            clock.set_min(min)%0A            clock.set_seg(seg\n+print(clock\n )%0A%0A \n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-10-20_19-13-04",
+            "content": "@@ -1543,232 +1543,8 @@\n eak%0A\n-        elif args %5B0%5D == %22init%22 :%0A            hora = int(args%5B1%5D)%0A            min = int(args%5B2%5D)%0A            seg = int(args%5B3%5D)%0A            clock.set_hora(hora)%0A            clock.set_min(min)%0A            clock.set_seg(seg)%0A%0A\n     \n@@ -1884,16 +1884,145 @@\n cond()%0A%0A\n+        elif args%5B0%5D == %22init%22 :%0A            clock.set_hora(hora)%0A            clock.set_min(min)%0A            clock.set_seg(seg)%0A%0A\n         \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-10-20_19-18-38",
+            "content": "@@ -1688,30 +1688,81 @@\n lock\n- = Relogio(hora, min, \n+.set_hora(hora)%0A            clock.set_min(min)%0A            clock.set_seg(\n seg)\n@@ -1976,33 +1976,32 @@\n ck.set_seg(seg)%0A\n-%0A\n         elif arg\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-10-20_19-25-49",
+            "content": "@@ -1856,24 +1856,24 @@\n   clock.\n-g\n+s\n et_ho\n-u\n r\n+a\n (hora)%0A \n@@ -1889,17 +1889,17 @@\n   clock.\n-g\n+s\n et_min(m\n@@ -1920,17 +1920,17 @@\n   clock.\n-g\n+s\n et_seg(s\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-10-20_19-51-01",
+            "content": "@@ -1856,24 +1856,24 @@\n   clock.\n-s\n+g\n et_ho\n+u\n r\n-a\n (hora)%0A \n@@ -1889,17 +1889,17 @@\n   clock.\n-s\n+g\n et_min(m\n@@ -1920,17 +1920,17 @@\n   clock.\n-s\n+g\n et_seg(s\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-10-20_19-53-13",
+            "content": "@@ -139,24 +139,95 @@\n = 0%0A        \n+self.set_hora(hora)%0A        self.set_min(min)%0A        self.set_seg(seg)\n %0A%0A%0A    def _\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-10-20_20-05-29",
+            "content": "class Relogio :\n    def __init__(self,hora : int, min: int, seg: int) :\n        self.__hora = 0\n        self.__min = 0\n        self.__seg = 0\n        \n\n\n    def __str__(self) -> str :\n        return f\"{self.__hora:02}:{self.__min:02}:{self.__seg:02}\"\n\n    def set_hora(self, valor : int) -> None :\n        \n        if valor > 23 or valor < 0 :\n            print(\"fail: hora invalida\")\n            return \n        self.__hora = valor\n\n    def set_min(self,valor : int) -> None :\n        \n        if valor > 59 or valor < 0 :\n            print(\"fail: minuto invalido\")\n            return\n        self.__min = valor\n        \n    def set_seg(self, valor : int) -> None :\n        if valor > 59 or valor < 0 :\n            print(\"fail: segundo invalido\")\n            return\n        self.__seg = valor\n         \n    def get_hour(self) -> int:\n        return self.__hora\n\n    def get_min(self) -> int :\n        return self.__min\n\n    def get_seg(self) -> int :\n        return self.__seg\n    \n    def next_second(self):\n        self.__seg += 1\n        if self.__seg > 59:\n            self.__seg = 0\n            self.__min += 1\n            if self.__min > 59:\n                self.__min = 0\n                self.__hora += 1\n                if self.__hora > 23:\n                    self.__hora = 0\n\ndef main() :\n    clock = Relogio(00,00,00)\n    while True :\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        if args[0] == \"end\" :\n            break\n        elif args [0] == \"init\" :\n            hora = int(args[1])\n            min = int(args[2])\n            seg = int(args[3])\n            clock = Relogio(hora, min, seg)\n\n        elif args[0] == \"set\" :\n            hora = int(args[1])\n            min = int(args[2])\n            seg = int(args[3])\n            clock.set_hora(hora)\n            clock.set_min(min)\n            clock.set_seg(seg)\n\n        elif args[0] == \"show\" :\n            print(clock)\n        elif args[0] == \"next\" :\n            clock.next_second()\n\n        else :\n            print(\"input inv\u00e1lido\")\nmain()\n            \n\n\n            \n\n    \n\n        \n",
+            "lines": "89"
         }
     ]
 }
