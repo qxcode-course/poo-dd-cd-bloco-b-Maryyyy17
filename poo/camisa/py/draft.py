@@ -17,10 +17,7 @@ class Camisa :
     
     def main () :
         Blouse = Camisa()
-        while True :
-        line = input()
-        print("$" + line)
-        args = line.split(" ")
-        if args[0] == "end" :
-            break
-
+        while Blouse.get_Camisa() == "" :
+            print("Digite seu tamanho de roupa")
+            tamanho = input()
+            Blouse.set_Camisa()
