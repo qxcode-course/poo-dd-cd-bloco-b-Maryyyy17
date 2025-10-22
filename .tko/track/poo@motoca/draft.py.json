@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-22_01-46-30",
+            "content": "@@ -796,24 +796,25 @@\n        %0A    \n+ \n def leave(se\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-10-22_01-47-31",
+            "content": "@@ -451,15 +451,12 @@\n n = \n-(empty)\n+None\n %0A%0A  \n@@ -500,16 +500,17 @@\n f%22power:\n+ \n %7Bself.__\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-10-22_01-48-12",
+            "content": "@@ -445,16 +445,25 @@\n  Person \n+= (empty)\n %0A%0A    de\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-10-22_01-48-50",
+            "content": "class Person:\n    def __init__(self, name : str, age: int) :\n        self.__name : str = name\n        self.__age: int = age\n\n    def toString(self) -> str :\n        return f\"{self.__name}:{self.__age}\"\n    \n    def getName(self)-> str :\n        return self._name\n    \n    def getAge(self) -> int :\n        return self.__age\n\nclass Moto :\n    def __init__(self) :\n        self.__power: int = 1\n        self.__time: int = 0\n        self.__person: Person \n\n    def __str__(self) :\n        return f\"power:{self.__power}, time:{self.__time}, person: {self.__person}\"\n\n    def insert(self,pessoa:Person) -> bool :\n        if self.__person is not None :\n            print(\"fail: busy motocycle\")\n            return False\n        else:\n            self.__person = pessoa\n            return True\n        \n    def leave(self) -> Person | None :\n        if self.__person == True :\n            self.__person -= 1\n        else :\n            print(\"nao h\u00e1 ninguem na moto\")\n\n    def drive (self, tempo : int) :\n        if self.__person.getAge() > 10 :\n            print(\"nao h\u00e1 passageiros\")\n            return\n        if self.__time == 0 :\n            print(\"compre tempo primeiro\")\n            return\n        if tempo > self.__time :\n            print(f\"fail: time finished after {self.__time} minutes\")\n            self.__time = 0\n        else:\n            self.__time -= tempo\n\n    def buy(self, tempo : int) -> None :\n         self.__time += tempo \n         return tempo\n        \n    def honk(self) -> str:\n        buzina = \"P\" + (\"e\" * self.__power) + \"m\"\n        return buzina\n    \n    def getPerson(self) -> Person :\n        return Person\n    \n    def getPower(self):\n        return self.__power\n    \n    def getTime(self) -> int:\n        return self.__time\n    \n    def setPower(self, power: int) :\n        self.__power = power\n\ndef main() :\n    pop = Moto()\n    while True :\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        if args[0] == \"end\" : \n            break\n        elif args[0] == \"show\" :\n            print(pop)\n        elif args[0] == \"init\" :\n            pot = int(args[1])\n            pop.setPower(pot)\n        elif args[0] == \"enter\":\n            entrarn =(args[1])\n            entrari = int(args[2])\n            pop.getPerson(entrarn)\n            pop.getPerson(entrari)\n        elif args[0] == \"buy\" :\n            tempo = int(args[1])\n            pop.getTime()\n        elif args[0] == \"leave\" :\n            pop.leave()\n        elif args[0] == \"drive\" :\n            tempo = int(args[1])\n            pop.drive(tempo)\n        elif args[0] == \"honk\" :\n            print(pop.honk())\n        else :\n            print(\"input invalido\")\nmain()",
+            "lines": "101"
+        }
+    ]
+}
