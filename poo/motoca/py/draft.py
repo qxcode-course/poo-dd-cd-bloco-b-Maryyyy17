@@ -16,37 +16,44 @@ class Moto :
     def __init__(self) :
         self.__power: int = 1
         self.__time: int = 0
-        self.__person: Person 
+        self.__person: Person = None
 
     def __str__(self) :
-        return f"power:{self.__power}, time:{self.__time}, person: {self.__person}"
+        if self.__person == None :
+            return  f"power:{self.__power}, time:{self.__time}, person:(empty)"
+        return f"power:{self.__power}, time:{self.__time}, person:({self.__person.toString()})"
 
     def insert(self,pessoa:Person) -> bool :
         if self.__person is not None :
-            print("fail: busy motocycle")
+            print("fail: busy motorcycle")
             return False
         else:
             self.__person = pessoa
             return True
         
     def leave(self) -> Person | None :
-        if self.__person == True :
-            self.__person -= 1
+        if self.__person != None :
+            print(self.__person.toString())
+            self.__person = None
         else :
-            print("nao há ninguem na moto")
+            print("fail: empty motorcycle")
 
-    def drive (self, tempo : int) :
-        if self.__person.getAge() > 10 :
-            print("nao há passageiros")
+    def drive (self, tempo : int) -> None:
+        if self.__person != None and self.__person.getAge() > 10 :
+            print("fail: too old to drive")
             return
         if self.__time == 0 :
-            print("compre tempo primeiro")
+            print("fail: buy time first")
             return
         if tempo > self.__time :
             print(f"fail: time finished after {self.__time} minutes")
             self.__time = 0
+        if self.__person == None :
+            print("fail: empty motorcycle")
         else:
             self.__time -= tempo
+            if self.__time < 0 :
+                self.__time = 0
 
     def buy(self, tempo : int) -> None :
          self.__time += tempo 
@@ -84,11 +91,10 @@ def main() :
         elif args[0] == "enter":
             entrarn =(args[1])
             entrari = int(args[2])
-            pop.getPerson(entrarn)
-            pop.getPerson(entrari)
+            pop.insert(Person(entrarn, entrari))
         elif args[0] == "buy" :
             tempo = int(args[1])
-            pop.getTime()
+            pop.buy(tempo)
         elif args[0] == "leave" :
             pop.leave()
         elif args[0] == "drive" :
