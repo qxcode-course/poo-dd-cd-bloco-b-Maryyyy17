@@ -1,0 +1,259 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-26_22-44-23",
+            "content": "@@ -1933,35 +1933,8 @@\n     \n-self.__passageiro.setMoney(\n self\n@@ -1959,16 +1959,17 @@\n oney() -\n+=\n  distanc\n@@ -1969,17 +1969,16 @@\n distance\n-)\n %0A       \n@@ -1993,43 +1993,18 @@\n f.__\n-motorista.setMoney(self.__motorista\n+passageiro\n .get\n@@ -2015,18 +2015,17 @@\n y() \n-+ distance\n+= (%22None%22\n )%0A%0A \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-26_22-47-17",
+            "content": "@@ -957,17 +957,16 @@\n  Driver:\n- \n None, Pa\n@@ -973,17 +973,16 @@\n ssenger:\n- \n None%22%0A  \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-26_22-48-06",
+            "content": "@@ -671,33 +671,32 @@\n _valor%7D, Driver:\n- \n None, Passenger:\n@@ -826,33 +826,32 @@\n sta%7D, Passenger:\n- \n None%22%0A        if\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-26_22-48-34",
+            "content": "@@ -648,33 +648,32 @@\n   return f%22Cost:\n- \n %7Bself.__valor%7D, \n@@ -774,33 +774,32 @@\n   return f%22Cost:\n- \n %7Bself.__valor%7D, \n@@ -936,17 +936,16 @@\n  f%22Cost:\n- \n %7Bself.__\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-23-38",
+            "content": "@@ -697,17 +697,16 @@\n ssenger:\n- \n %7Bself.__\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-24-00",
+            "content": "@@ -808,17 +808,16 @@\n  Driver:\n- \n %7Bself.__\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-24-15",
+            "content": "@@ -230,17 +230,16 @@\n ey(self,\n- \n money : \n@@ -272,24 +272,16 @@\n .__money\n- = money\n %0A    %0A  \n@@ -2471,18 +2471,8 @@\n taxi\n-.__str__()\n )%0A  \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-41-40",
+            "content": "@@ -274,16 +274,23 @@\n __money \n+= money\n %0A    %0A  \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-41-54",
+            "content": "@@ -2760,24 +2760,66 @@\n rgs%5B2%5D)%0A    \n+        passenger = Person(nome, dinheiro)\n %0A           \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-42-39",
+            "content": "@@ -2795,30 +2795,25 @@\n ssenger(\n-nome, dinheiro\n+passenger\n )%0A      \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-42-56",
+            "content": "@@ -2782,17 +2782,17 @@\n    taxi.\n-g\n+s\n etPassen\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-43-52",
+            "content": "@@ -2795,16 +2795,30 @@\n ssenger(\n+nome, dinheiro\n )%0A      \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-44-19",
+            "content": "@@ -2795,24 +2795,16 @@\n ssenger(\n-dinheiro\n )%0A      \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-44-33",
+            "content": "@@ -606,152 +606,294 @@\n     \n-driver_str\n+if self.__motorista\n  =\n+=\n  \n-%22\n None\n-%22 if self.__motorista is None else str(self.__motorista)%0A        passenger_str = %22None%22 if self.__passageiro is None else str(\n+ :%0A            return f%22Cost: %7Bself.__valor%7D, Driver: None, Passenger: %7Bself.__passageiro%7D%22%0A        if self.__passageiro == None :%0A            return f%22Cost: %7Bself.__valor%7D, Driver: %7Bself.__motorista%7D, Passenger: None%22%0A        if self.__motorista == None and \n self\n@@ -897,34 +897,47 @@\n elf.__passageiro\n-)%0A\n+ == None :%0A    \n         return f\n@@ -971,20 +971,12 @@\n er: \n-%7Bdriver_str%7D\n+None\n , Pa\n@@ -988,33 +988,13 @@\n er: \n-%7Bpassenger_str%7D%22%0A        \n+None%22\n %0A   \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-46-35",
+            "content": "@@ -1615,16 +1615,17 @@\n __valor \n++\n = distan\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-10-27_00-47-04",
+            "content": "@@ -606,314 +606,152 @@\n     \n-if self.__motorista =\n+driver_str \n = \n+%22\n None\n- :%0A            return f%22Cost: %7Bself.__valor%7D, Driver: None, Passenger: %7Bself.__passageiro.__str__()%7D%22%0A        if self.__passageiro =\n+%22 if self.__motorista is None else str(self.__motorista)%0A        passenger_str \n = \n+%22\n None\n- :%0A            return f%22Cost: %7Bself.__valor%7D, Driver: %7Bself.__motorista.__str__()%7D, Passenger: None%22%0A        if self.__motorista == None and \n+%22 if self.__passageiro is None else str(\n self\n@@ -767,23 +767,10 @@\n eiro\n- == None :%0A    \n+)%0A\n     \n@@ -812,20 +812,28 @@\n Driver: \n-None\n+%7Bdriver_str%7D\n , Passen\n@@ -837,21 +837,41 @@\n senger: \n-None%22\n+%7Bpassenger_str%7D%22%0A        \n %0A       \n@@ -1615,17 +1615,16 @@\n __valor \n-+\n = distan\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-10-27_00-49-22",
+            "content": "@@ -514,16 +514,22 @@\n  Person \n+= None\n %0A       \n@@ -556,16 +556,22 @@\n  Person \n+= None\n %0A%0A    de\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-49-42",
+            "content": "@@ -514,22 +514,16 @@\n  Person \n-= None\n %0A       \n@@ -550,22 +550,16 @@\n  Person \n-= None\n %0A%0A    de\n@@ -1541,34 +1541,24 @@\n ,money: int)\n- -%3E Person\n  :%0A        r\n@@ -1635,26 +1635,16 @@\n ey: int)\n- -%3E Person\n  :%0A     \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-52-24",
+            "content": "@@ -2509,16 +2509,26 @@\n int(taxi\n+.__str__()\n )%0A      \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-52-39",
+            "content": "@@ -2825,22 +2825,16 @@\n ssenger(\n-nome, \n dinheiro\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_00-53-07",
+            "content": "@@ -2790,32 +2790,36 @@\n rgs%5B2%5D)%0A    \n+%0A   \n         \n taxi.setPass\n@@ -2806,22 +2806,23 @@\n         \n+ \n taxi.\n-s\n+g\n etPassen\n@@ -2825,23 +2825,16 @@\n ssenger(\n-Person(\n nome, di\n@@ -2840,17 +2840,16 @@\n inheiro)\n-)\n %0A       \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-01-14",
+            "content": "@@ -2509,26 +2509,16 @@\n int(taxi\n-.__str__()\n )%0A      \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-01-38",
+            "content": "@@ -2509,16 +2509,26 @@\n int(taxi\n+.__str__()\n )%0A      \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-02-54",
+            "content": "@@ -2896,19 +2896,16 @@\n valor = \n-int\n (args%5B1%5D\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-03-28",
+            "content": "@@ -248,15 +248,8 @@\n nt) \n--%3E None\n :%0A  \n@@ -278,16 +278,8 @@\n ney \n-== money\n %0A   \n@@ -2687,17 +2687,8 @@\n ver(\n-dinheiro,\n driv\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-06-10",
+            "content": "@@ -235,24 +235,28 @@\n lf, \n-dinheiro = int) \n+money : int) -%3E None\n :%0A  \n@@ -282,25 +282,23 @@\n _money =\n- dinheiro\n+= money\n %0A    %0A  \n@@ -613,150 +613,8 @@\n tr:%0A\n-        if self.__motorista == None and self.__passageiro == None :%0A            return f%22Cost: %7Bself.__valor%7D, Driver: None, Passenger: None%22%0A\n     \n@@ -883,23 +883,157 @@\n : None%22%0A\n-\n        \n+ if self.__motorista == None and self.__passageiro == None :%0A            return f%22Cost: %7Bself.__valor%7D, Driver: None, Passenger: None%22\n %0A       \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-09-20",
+            "content": "@@ -225,24 +225,40 @@\n etMoney(self\n+, dinheiro = int\n ) :%0A        \n@@ -277,16 +277,26 @@\n __money \n+= dinheiro\n %0A    %0A  \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-10-36",
+            "content": "@@ -1536,24 +1536,35 @@\n tDriver(self\n+,money: int\n ) -%3E Person \n@@ -1636,24 +1636,35 @@\n ssenger(self\n+,money: int\n ) -%3E Person \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-12-52",
+            "content": "@@ -1544,39 +1544,32 @@\n self) -%3E Person \n-%7C None \n :%0A        return\n@@ -1633,39 +1633,32 @@\n self) -%3E Person \n-%7C None \n :%0A        return\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-13-25",
+            "content": "@@ -2249,25 +2249,21 @@\n self.__p\n-assageiro\n+erson\n  = None%0A\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-14-19",
+            "content": "@@ -2674,23 +2674,16 @@\n tDriver(\n-Person(\n dinheiro\n@@ -2690,17 +2690,16 @@\n ,driver)\n-)\n %0A       \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-14-43",
+            "content": "@@ -2595,32 +2595,76 @@\n  = int(args%5B2%5D)%0A\n+            driver = Person(nome, dinheiro)%0A\n             taxi\n@@ -2677,38 +2677,32 @@\n iver(Person(\n-nome, \n dinheiro\n ))%0A        i\n@@ -2681,32 +2681,39 @@\n (Person(dinheiro\n+,driver\n ))%0A        if ar\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-27_01-15-25",
+            "content": "@@ -2447,34 +2447,32 @@\n   break%0A        \n-el\n if args%5B0%5D == %22s\n@@ -2502,34 +2502,32 @@\n t(taxi)%0A        \n-el\n if args%5B0%5D == %22s\n@@ -2654,34 +2654,32 @@\n heiro))%0A        \n-el\n if args%5B0%5D == %22s\n@@ -2807,34 +2807,32 @@\n heiro))%0A        \n-el\n if args%5B0%5D == %22d\n@@ -2912,18 +2912,16 @@\n         \n-el\n if args%5B\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-16-41",
+            "content": "@@ -1568,32 +1568,35 @@\n %0A        return \n+f%22%7B\n self.__motorista\n@@ -1595,16 +1595,26 @@\n otorista\n+%7D %7Bmoney%7D%22\n %0A    %0A  \n@@ -1668,24 +1668,27 @@\n      return \n+f%22%7B\n self.__passa\n@@ -1688,24 +1688,34 @@\n __passageiro\n+%7D %7Bmoney%7D%22\n %0A    %0A    de\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-17-45",
+            "content": "@@ -2476,26 +2476,16 @@\n int(taxi\n-.__str__()\n )%0A      \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-19-31",
+            "content": "@@ -2484,16 +2484,18 @@\n .__str__\n+()\n )%0A      \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-19-43",
+            "content": "@@ -2480,23 +2480,16 @@\n taxi\n-(Person\n .__str__\n ()))\n@@ -2488,11 +2488,8 @@\n tr__\n-())\n )%0A  \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-20-19",
+            "content": "@@ -2492,20 +2492,16 @@\n __str__(\n-taxi\n )))%0A    \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-20-33",
+            "content": "@@ -233,30 +233,10 @@\n self\n-, money : int) -%3E None\n+) \n :%0A  \n@@ -261,23 +261,16 @@\n __money \n-= money\n %0A    %0A  \n@@ -565,32 +565,38 @@\n f __str__(self) \n+-%3E str\n :%0A        if sel\n@@ -2243,57 +2243,8 @@\n None\n-%0A        else :%0A            print(%22no passenger%22)\n %0A%0Ade\n@@ -2476,16 +2476,38 @@\n int(taxi\n+(Person.__str__(taxi))\n )%0A      \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-27_01-24-23",
+            "content": "@@ -282,17 +282,16 @@\n _money =\n-=\n  money%0A \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-27_01-24-36",
+            "content": "@@ -2547,26 +2547,16 @@\n int(taxi\n-.__str__()\n )%0A      \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-27_01-24-59",
+            "content": "@@ -2717,32 +2717,8 @@\n o))%0A\n-            print(taxi)%0A\n     \n@@ -2872,32 +2872,8 @@\n o))%0A\n-            print(taxi)%0A\n     \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-27_01-28-55",
+            "content": "@@ -2539,32 +2539,42 @@\n       print(taxi\n+.__str__()\n )%0A        elif a\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-29-36",
+            "content": "@@ -1334,16 +1334,23 @@\n Person) \n+-%3E bool\n :%0A      \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-30-19",
+            "content": "@@ -2700,32 +2700,43 @@\n o))%0A            \n+print(taxi)\n %0A        elif ar\n@@ -2883,24 +2883,35 @@\n             \n+print(taxi)\n %0A        eli\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-30-34",
+            "content": "@@ -2540,26 +2540,16 @@\n int(taxi\n-.__str__()\n )%0A      \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-30-57",
+            "content": "@@ -1069,32 +1069,39 @@\n river : Person) \n+-%3E bool\n :%0A        if sel\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-31-39",
+            "content": "@@ -1186,32 +1186,50 @@\n    return False%0A\n+        else:%0A    \n         self.__m\n@@ -1254,41 +1254,8 @@\n     \n-    print(f%22%7Bself.__motorista%7D%22)%0A\n     \n@@ -1428,32 +1428,50 @@\n    return False%0A\n+        else:%0A    \n         self.__p\n@@ -1501,42 +1501,8 @@\n     \n-    print(f%22%7Bself.__passageiro%7D%22)%0A\n     \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-35-26",
+            "content": "@@ -2564,16 +2564,26 @@\n int(taxi\n+.__str__()\n )%0A      \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-35-56",
+            "content": "@@ -2696,16 +2696,23 @@\n tDriver(\n+Person(\n nome, di\n@@ -2714,24 +2714,25 @@\n e, dinheiro)\n+)\n %0A           \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-27_01-36-30",
+            "content": "class Person :\n    def __init__(self, name : str, money : int):\n        self.__name : str = name\n        self.__money : int = money\n\n    def __str__(self) -> str:\n        return f\"{self.__name}:{self.__money}\"\n    \n    def setMoney(self, money : int) -> None:\n        return self.__money == money\n    \n    def getName (self) -> str:\n        return self.__name\n    \n    def getMoney(self) -> int:\n        return self.__money\n    \n\nclass MotoUber:\n    def __init__(self) :\n        self.__valor : int = 0\n        self.__motorista : Person = None\n        self.__passageiro : Person = None\n\n    def __str__(self) :\n        if self.__motorista == None and self.__passageiro == None :\n            return f\"Cost: {self.__valor}, Driver: None, Passenger: None\"\n        if self.__motorista == None :\n            return f\"Cost: {self.__valor}, Driver: None, Passenger: {self.__passageiro.__str__()}\"\n        if self.__passageiro == None :\n            return f\"Cost: {self.__valor}, Driver: {self.__motorista.__str__()}, Passenger: None\"\n       \n        \n    def setDriver(self, driver : Person) :\n        if self.__motorista is not None :\n            print(\"fail: already has a driver\")\n            return False\n        self.__motorista = driver\n        print(f\"{self.__motorista}\")\n        return True\n        \n    def setPassenger(self, passageiro : Person) :\n        if self.__motorista is None :\n            print(\"fail: theres no driver\")\n            return False\n        self.__passageiro = passageiro\n        print(f\"{self.__passageiro}\")\n        return True\n        \n    def getDriver(self) -> Person | None :\n        return self.__motorista\n    \n    def getPassenger(self) -> Person | None :\n        return self.__passageiro\n    \n    def corrida(self, distance : int) :\n        self.__valor += distance\n        if distance > self.__passageiro.getMoney() :\n            print(\"fail: Passenger does not have enough money\")\n            self.__passageiro.setMoney(0)\n        else :\n            self.__passageiro.setMoney(self.__passageiro.getMoney() - distance)\n            self.__motorista.setMoney(self.__motorista.getMoney() + distance)\n\n    def leave(self) -> Person | None :\n        if self.__passageiro != None :\n            print(self.__passageiro)\n            self.__passageiro = None\n        else :\n            print(\"no passenger\")\n\ndef main() :\n    taxi = MotoUber()\n    while True :\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        if args[0] == \"end\" :\n            break\n        elif args[0] == \"show\" :\n            print(taxi)\n        elif args[0] == \"setDriver\" :\n            nome = (args[1])\n            dinheiro = int(args[2])\n            taxi.setDriver(nome, dinheiro)\n            \n        elif args[0] == \"setPass\" :\n            nome = (args[1])\n            dinheiro = int(args[2])\n            taxi.setPassenger(Person(nome, dinheiro))\n            \n        elif args[0] == \"drive\" :\n            valor = int(args[1])\n            taxi.corrida(valor)\n        elif args[0] == \"leavePass\" :\n            taxi.leave()\n\nmain()\n\n\n        \n    ",
+            "lines": "102"
+        }
+    ]
+}

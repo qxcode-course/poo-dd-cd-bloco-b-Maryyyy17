@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_17-36-18",
+            "content": "@@ -2212,24 +2212,37 @@\n  self.__tip%0A\n+    def setT%0A\n             \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-23_17-36-33",
+            "content": "@@ -2264,16 +2264,18 @@\n  Grafite\n+()\n %0A    whi\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-10-23_17-37-09",
+            "content": "@@ -1612,39 +1612,38 @@\n       if self.__\n-lead is\n+tip !=\n  None :%0A        \n@@ -1656,159 +1656,84 @@\n int(\n-%22fail: sem grafite%22)%0A            return None%0A        else :%0A            remover = self.__lead%0A            self.__lead = None%0A            return remover\n+self.__lead.__str__())%0A        else :%0A            print(%22fail: sem grafite%22)\n %0A%0A  \n@@ -1791,16 +1791,47 @@\n ead \n-is\n+!=\n  None \n+and self.__lead.getSize() %3E 10 \n :%0A  \n@@ -1849,34 +1849,33 @@\n rint(%22fail: \n-sem\n+mto\n  gra\n-fit\n+nd\n e%22)%0A        \n@@ -1884,17 +1884,16 @@\n   return\n- \n %0A       \n@@ -1897,116 +1897,25 @@\n     \n-%0A        usar = self.__lead.usagePerSheet()%0A        tamanho = self.__lead.getSize()%0A%0A        if tamanho %3C\n+if self.__tip =\n = \n-1\n 0 :%0A\n@@ -1943,26 +1943,17 @@\n il: \n-tamanho insuficien\n+sem grafi\n te%22)\n@@ -1984,75 +1984,124 @@\n     \n-%0A        if tamanho - usar %3C 10 :%0A            escrever = tamanho -1\n+if self.__tip %3E self.__lead :%0A            print(f%22fail: time finished after %7Bself.__tip%7D%22)%0A            self.__tip = \n 0%0A  \n@@ -2098,35 +2098,34 @@\n tip = 0%0A        \n- \n-  \n+if\n  self.__lead.set\n@@ -2124,20 +2124,18 @@\n lead\n-.setSize(10)\n+ == None :\n %0A   \n@@ -2153,32 +2153,20 @@\n int(\n-f\n %22fail: \n-folha incompleta\n+empty\n %22)%0A \n@@ -2168,34 +2168,29 @@\n y%22)%0A        \n-    return\n+else:\n %0A        %0A  \n@@ -2186,25 +2186,20 @@\n         \n-%0A \n     \n-   \n self.__l\n@@ -2205,30 +2205,22 @@\n lead\n-.setSize(tamanho-usar)\n+ -= self.__tip\n %0A   \n@@ -2603,130 +2603,8 @@\n t%22:%0A\n-            if lapiseira is not None :%0A                print(%22fail: lapiseira nao inicializada%22)%0A                continue%0A\n     \n@@ -2786,50 +2786,8 @@\n e%22:%0A\n-            if lapiseira is not None:%0A    \n     \n@@ -2848,50 +2848,8 @@\n e%22:%0A\n-            if lapiseira is not None:%0A    \n     \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-10-23_18-04-43",
+            "content": "@@ -2682,24 +2682,19 @@\n     \n-lapiseira.Grafit\n+Lead.setSiz\n e(po\n",
+            "lines": "114"
+        },
+        {
+            "label": "2025-10-23_18-05-58",
+            "content": "@@ -2683,27 +2683,25 @@\n    lapiseira\n- = \n+.\n Grafite(pont\n",
+            "lines": "114"
+        },
+        {
+            "label": "2025-10-23_18-06-15",
+            "content": "@@ -1111,17 +1111,16 @@\n calibre:\n- \n %7Bself.__\n@@ -1133,17 +1133,16 @@\n grafite:\n- \n %7Bself.__\n",
+            "lines": "114"
+        },
+        {
+            "label": "2025-10-23_18-06-40",
+            "content": "@@ -1053,12 +1053,12 @@\n d = \n-null\n+None\n %0A%0A  \n",
+            "lines": "114"
+        },
+        {
+            "label": "2025-10-23_18-06-58",
+            "content": "@@ -1049,20 +1049,20 @@\n  Lead = \n-None\n+null\n %0A%0A    de\n@@ -1090,37 +1090,8 @@\n r :%0A\n-        if self.__lead :%0A    \n     \n@@ -1164,86 +1164,8 @@\n )%7D%22%0A\n-        else :%0A            return f%22calibre: %7Bself.__tip%7D, grafite: %7B%22null%22%7D%22%0A\n     \n",
+            "lines": "114"
+        },
+        {
+            "label": "2025-10-23_18-08-54",
+            "content": "@@ -2918,28 +2918,34 @@\n il: \n-calibre incompativel\n+lapiseira nao inicializada\n %22)%0A \n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-10-23_18-09-43",
+            "content": "@@ -1113,15 +1113,8 @@\n ead \n-== None\n :%0A  \n@@ -1169,17 +1169,51 @@\n e: %7B\n-%22null%22%7D%22%0A\n+self.__lead.__str__()%7D%22%0A        else :%0A    \n     \n@@ -1262,36 +1262,17 @@\n e: %7B\n-self.__lead.__str__()%7D%22%0A    \n+%22null%22%7D%22%0A\n     \n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-10-23_18-11-37",
+            "content": "@@ -376,51 +376,8 @@\n ess%0A\n-        if grosso != %22HB%22 and grosso != %22%22%0A\n     \n@@ -2838,16 +2838,132 @@\n nsert%22:%0A\n+            if lapiseira is not None :%0A                print(%22fail: calibre incompativel%22)%0A                continue%0A\n         \n",
+            "lines": "116"
+        },
+        {
+            "label": "2025-10-23_18-13-35",
+            "content": "@@ -364,32 +364,75 @@\n self.__hardness%0A\n+        if grosso != %22HB%22 and grosso != %22%22%0A\n         if gross\n",
+            "lines": "114"
+        },
+        {
+            "label": "2025-10-23_18-13-47",
+            "content": "\nclass Lead :\n    def __init__(self, thickness : float, hardness : str, size : int):\n        self.__thickness : float = thickness\n        self.__hardness : str = hardness\n        self.__size : int = size \n\n    def __str__(self) -> str :\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n\n    def usagePerSheet(self) -> int :\n        grosso = self.__hardness\n        if grosso == \"HB\" :\n            return self.__thickness(1)\n        if grosso == \"2B\" :\n            return self.__thickness(2)\n        if grosso == \"4B\" :\n            return self.__thickness(4)\n        if grosso == \"6B\" :\n            return self.__thickness(6)\n        \n    def setSize(self, size : int) -> None :\n        self.__size = size\n\n    def getHardness(self) -> str:\n        return self.__hardness\n    \n    def getThickness(self) -> float :\n        return self.__thickness\n    \n    def getSize(self) -> int :\n        return self.__size\n        \nclass Grafite :\n    def __init__(self, tip : float) :\n        self.__tip : float = tip\n        self.__lead : Lead = None\n\n    def __str__(self) -> str :\n        if self.__lead == None:\n            return f\"calibre: {self.__tip}, grafite: {\"null\"}\"\n        return f\"calibre: {self.__tip}, grafite: {self.__lead.__str__()}\"\n        \n    def hasGraffite(self) -> bool:\n        if self.__lead is not None :\n            print(\"nao tem grafite\")\n            return False\n        else :\n            return True\n        \n    def insert(self, lead : Lead) -> bool:\n        if self.__lead is not None :\n            print(\"nao tem grafite\")\n            return False\n        else :\n            self.__tip(lead)\n            return True\n        \n    def remove(self) -> Lead | None :\n        if self.__lead is None :\n            print(\"fail: sem grafite\")\n            return None\n        else :\n            remover = self.__lead\n            self.__lead = None\n            return remover\n\n    def writePage(self) -> None :\n        if self.__lead is None :\n            print(\"fail: sem grafite\")\n            return \n        \n        usar = self.__lead.usagePerSheet()\n        tamanho = self.__lead.getSize()\n\n        if tamanho <= 10 :\n            print(\"fail: tamanho insuficiente\")\n            return\n        \n        if tamanho - usar < 10 :\n            escrever = tamanho -10\n            self.__lead.setSize(10)\n            print(f\"fail: folha incompleta\")\n            return\n        \n        self.__lead.setSize(tamanho-usar)\n            \ndef main():\n    lapiseira = Grafite\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        if args[0] == \"end\" :\n            break\n        if args[0] == \"show\" :\n            print(lapiseira)\n        if args[0] == \"init\" :\n            ponta = float(args[1])\n            lapiseira = Grafite(ponta)\n        if args[0] == \"insert\":\n            thick = float(args[1])\n            hard = str(args[2])\n            siz = int(args[3])\n            lapiseira.insert(Lead(thick, hard, siz))\n        if args[0] == \"remove\":\n            if lapiseira is not None:\n                lapiseira.remove()\n        if args[0] == \"write\":\n            if lapiseira is not None:\n                lapiseira.writePage()\n\nmain()",
+            "lines": "113"
+        }
+    ]
+}
